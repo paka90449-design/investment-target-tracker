@@ -58,8 +58,8 @@ body {
 }
 
 .input-group {
-    margin-bottom: 30px;
-    max-width: 300px;
+    margin-bottom: 20px;
+    max-width: 400px;
     display: flex;
     flex-direction: column;
 }
@@ -67,7 +67,7 @@ body {
 .input-group label {
     font-weight: 600;
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
     color: #4a5b6d;
     font-size: 0.9rem;
     letter-spacing: 0.5px;
@@ -98,13 +98,18 @@ body {
 
 #chart-container {
     position: relative;
-    max-width: 600px;
-    height: 350px;
+    height: 400px;
     width: 100%;
     background: #f8faf9;
     border-radius: 12px;
     padding: 20px;
     border: 1px solid #edf2ef;
+}
+
+/* for an adaptive chart */
+canvas {
+    width: 100% !important;
+    height: 100% !important;
 }
 
 /* animations */

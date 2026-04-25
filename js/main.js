@@ -34,7 +34,8 @@ function animateValue(obj, start, end, duration) {
 
 targetForm.addEventListener('input', function(e) {
     const initialInvestment = parseFloat(document.getElementById('initial-investment').value) || 0;
-    const monthlyStep = parseFloat(document.getElementById('monthly-step').value) || 0;
+    let monthlyStep = parseFloat(document.getElementById('monthly-step').value) || 0;
+    const annualGrowth = parseFloat(document.getElementById('annual-growth').value) || 0;
     const years = parseFloat(document.getElementById('years').value) || 0;
     const rate = parseFloat(document.getElementById('rate').value) || 0;
 
@@ -52,6 +53,7 @@ targetForm.addEventListener('input', function(e) {
         total *= (1 + monthlyRate);
 
         if ((i + 1) % 12 === 0) {
+            monthlyStep += annualGrowth;
             yearlyData.push(total.toFixed(2));
             investedData.push(totalInvested.toFixed(2));
             labels.push(`Year ${(i + 1) / 12}`);
@@ -107,3 +109,13 @@ targetForm.addEventListener('input', function(e) {
         });
     }
 });
+
+const chartContainer = document.getElementById('chart-container');
+
+const resizeObserver = new ResizeObserver(() => {
+    if (myChart) {
+        myChart.resize();
+    }
+});
+
+resizeObserver.observe(chartContainer);
