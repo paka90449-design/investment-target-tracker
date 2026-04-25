@@ -12,6 +12,4 @@ The goal is to demonstrate the power of compound interest and calculate the exac
 - [x] Initial deployment to GitHub
 - [x] Real-time Updates
 - [x] Visualization exponential growth chart
-
-## Future Milestones
-- **Design improvements:** adding animations and smooth beautiful metamorphoses
+- [x] Final design improvements
