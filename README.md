@@ -10,8 +10,8 @@ The goal is to demonstrate the power of compound interest and calculate the exac
 - [x] JavaScript logic for monthly compounding interest
 - [x] Correct currency formatting and result display
 - [x] Initial deployment to GitHub
+- [x] Real-time Updates
+- [x] Visualization exponential growth chart
 
 ## Future Milestones
-- **Visualization:** Integrate Chart.js to see the exponential growth curve
 - **Design improvements:** adding animations and smooth beautiful metamorphoses
-- **Real-time Updates:** Remove the submit button and implement automatic recalculation on every input change for a smoother UX.
