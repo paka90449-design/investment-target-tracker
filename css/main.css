@@ -21,11 +21,12 @@ body {
     padding: 40px;
     border-radius: 15px;
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    padding: 50px;
 }
 
 .calculator-header {
     color: #2c3e50;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 .calculator-header h1 {
@@ -34,9 +35,20 @@ body {
 }
 
 .calculator--grids {
+    margin-top: 40px;
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
+    grid-template-columns: 1fr 3fr;
+    gap: 60px;
+    align-items: start;
+}
+
+.calculator-results {
+    display: flex;
+    flex-direction: column;
+}
+
+.calculator__results {
+    margin-top: -10px;
 }
 
 @media (max-width: 768px) {
@@ -46,15 +58,19 @@ body {
 }
 
 .input-group {
-    margin-bottom: 20px;
+    margin-bottom: 30px;
+    max-width: 300px;
     display: flex;
     flex-direction: column;
 }
 
 .input-group label {
     font-weight: 600;
-    margin-bottom: 8px;
+    display: block;
+    margin-bottom: 10px;
     color: #4a5b6d;
+    font-size: 0.9rem;
+    letter-spacing: 0.5px;
 }
 
 .input-group input {
@@ -65,33 +81,49 @@ body {
     transition: border-color 0.3s;
 }
 
-button {
-    width: 100%;
-    padding: 15px;
-    background-color: #27ae60;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 18px;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #2ecc71;
-}
-
 .result-card {
-    background: #e8f5e9;
-    padding: 20px;
-    border-radius: 10px;
+    background: #f8faf9;
+    padding: 30px;
+    border-radius: 12px;
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
+    border: 1px solid #edf2ef;
 }
 
 .result-card__value {
     font-size: 32px;
     font-weight: 800;
     color: #2e7d32;
+}
+
+#chart-container {
+    position: relative;
+    max-width: 600px;
+    height: 350px;
+    width: 100%;
+    background: #f8faf9;
+    border-radius: 12px;
+    padding: 20px;
+    border: 1px solid #edf2ef;
+}
+
+/* animations */
+
+:root {
+    --base-green: #2e7d32;
+    --bright-salad: #2ecc71;
+    --danger-red: #e74c3c;
+}
+
+.result-card__value {
+    transition: color 0.3s ease;
+    color: var(--base-green);
+}
+
+.result-plus {
+    color: var(--bright-salad);
+}
+
+.result-minus {
+    color: var(--danger-red);
 }
